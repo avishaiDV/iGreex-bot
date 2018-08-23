@@ -22,10 +22,20 @@ let messageArray = message.content.split(" ");
 let cmd = messageArray[0];
 let args = messageArray.slice(1);
 
-
+//test command
 if(cmd === `${prefix}hello`){
     message.channel.send("Hi there!")
 }
+//youtube channel command
+if(cmd === `${prefix}yt`){
+  let embed = new Discord.RichEmbed()
+  .setDescription("My youtube channel")
+  .addField("קישור לערוץ", "https://www.youtube.com/channel/UCzxJ__JTqeOM2GecOxGIcLA?view_as=subscriber")
+  .setFooter("bot made by avishaiDV")
+  .setColor('RANDOM');
+  message.channel.send(embed)
+}
+  
 
 });
 
