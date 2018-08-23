@@ -48,6 +48,16 @@ if(cmd === `${prefix}Gang`){
   message.channel.send(embed)
 }
   
+//sub count
+if(cmd === `${prefix}GreeX`){
+  let embed = new Discord.RichEmbed()
+  .setColor('RANDOM')
+  .setDescription("כמה סאבים יש לי?")
+  .addField("קישור לסאב קאונט שלי:", "https://livecounts.net/channel/iGreex")
+  .setFooter("bot made by avishaiDV");
+  message.channel.send(embed)
+}
+  
 
 });
 
