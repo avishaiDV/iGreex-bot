@@ -36,6 +36,18 @@ if(cmd === `${prefix}yt`){
   message.channel.send(embed)
 }
   
+//server members count
+if(cmd === `${prefix}Gang`){
+  let icon = message.guild.iconURL;
+  let embed = new Discord.RichEmbed()
+  .setDescription("מספר האנשים בשרת")
+  .setColor('RANDOM')
+  .setThumbnail(icon)
+  .addField("מספר אנשים הוא:", message.guild.memberCount)
+  .setFooter("bot made by avishaiDV");
+  message.channel.send(embed)
+}
+  
 
 });
 
