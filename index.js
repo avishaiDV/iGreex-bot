@@ -84,4 +84,5 @@ if(cmd === `${prefix}help`){
 });
 
 
-bot.login(botconfig.token);
+bot.login(process.env.BOT_TOKEN);
+
