@@ -24,10 +24,6 @@ let messageArray = message.content.split(" ");
 let cmd = messageArray[0];
 let args = messageArray.slice(1);
 
-//test command
-if(cmd === `${prefix}hello`){
-    commands.send("Hi there!")
-}
 
 
 //youtube channel command
