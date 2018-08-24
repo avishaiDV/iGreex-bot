@@ -5,7 +5,7 @@ const Discord = require("discord.js");
 const bot = new Discord.Client({disableEveryone: true});
 bot.on("ready", async () => {
   console.log(`${bot.user.username} is online!`);
-  bot.user.setActivity(`Im a little baby :D`, {type: `listening`})
+  bot.user.setActivity(`$help`, {type: `listening`})
   .then(presence => console.log(`Activity set to ${presence.game ? presence.game.name : 'none'}`))
   .catch (console.error);
 });
