@@ -1,5 +1,6 @@
 const botconfig = require("./botconfig");
 const Discord = require("discord.js");
+const commands = bot.channels.get(botconfig.commandsChannelID);
 
 const bot = new Discord.Client({disableEveryone: true});
 bot.on("ready", async () => {
@@ -24,8 +25,10 @@ let args = messageArray.slice(1);
 
 //test command
 if(cmd === `${prefix}hello`){
-    message.channel.send("Hi there!")
+    commands.send("Hi there!")
 }
+
+
 //youtube channel command
 if(cmd === `${prefix}yt`){
   let embed = new Discord.RichEmbed()
@@ -33,9 +36,10 @@ if(cmd === `${prefix}yt`){
   .addField("קישור לערוץ", "https://www.youtube.com/channel/UCzxJ__JTqeOM2GecOxGIcLA?view_as=subscriber")
   .setFooter("bot made by avishaiDV")
   .setColor('RANDOM');
-  message.channel.send(embed)
+  message.delete().catch(O_o=>{});
+  commands.send(embed)
 }
-  
+
 //server members count
 if(cmd === `${prefix}Gang`){
   let icon = message.guild.iconURL;
@@ -45,9 +49,10 @@ if(cmd === `${prefix}Gang`){
   .setThumbnail(icon)
   .addField("מספר אנשים הוא:", message.guild.memberCount)
   .setFooter("bot made by avishaiDV");
-  message.channel.send(embed)
+  message.delete().catch(O_o=>{});
+  message.send(embed)
 }
-  
+
 //sub count
 if(cmd === `${prefix}GreeX`){
   let embed = new Discord.RichEmbed()
@@ -55,10 +60,28 @@ if(cmd === `${prefix}GreeX`){
   .setDescription("כמה סאבים יש לי?")
   .addField("קישור לסאב קאונט שלי:", "https://livecounts.net/channel/iGreex")
   .setFooter("bot made by avishaiDV");
-  message.channel.send(embed)
+  message.delete().catch(O_o=>{});
+  commands.channel.send(embed)
 }
-  
+
+//help command
+if(cmd === `${prefix}help`){
+  let icon = bot.user.displayAvatarURL;
+  let embed = new Discord.RichEmbed()
+  .setDescription("bot help")
+  .addField("prefix", "$")
+  .addField("server members count", "$Gang")
+  .addField("my youtube channel", "$yt")
+  .addField("my sub count", "$GreeX")
+  .addField("bot creator:", "avishaiDV ♥")
+  .setFooter("bot made by avishaiDV")
+  .setColor('RANDOM')
+  .setThumbnail(icon);
+  message.delete().catch(O_o=>{});
+  commands.send(embed)
+}
 
 });
 
-bot.login(process.env.BOT_TOKEN);
+
+bot.login(botconfig.token);
