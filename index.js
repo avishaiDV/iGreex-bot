@@ -51,7 +51,7 @@ if(cmd === `${prefix}Gang`){
   .addField("מספר אנשים הוא:", message.guild.memberCount)
   .setFooter("bot made by avishaiDV");
   message.delete().catch(O_o=>{});
-  message.send(embed)
+  commands.reply(embed)
 }
 
 //sub count
@@ -62,7 +62,7 @@ if(cmd === `${prefix}GreeX`){
   .addField("קישור לסאב קאונט שלי:", "https://livecounts.net/channel/iGreex")
   .setFooter("bot made by avishaiDV");
   message.delete().catch(O_o=>{});
-  commands.channel.send(embed)
+  commands.send(embed)
 }
 
 //help command
