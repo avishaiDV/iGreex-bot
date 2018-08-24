@@ -1,6 +1,6 @@
 const botconfig = require("./botconfig");
 const Discord = require("discord.js");
-const commands = bot.channels.get(botconfig.commandsChannelID);
+
 
 const bot = new Discord.Client({disableEveryone: true});
 bot.on("ready", async () => {
@@ -11,6 +11,7 @@ bot.on("ready", async () => {
 });
 
 bot.on("message", async message => {
+    const commands = bot.channels.get(botconfig.commandsChannelID);
     const logsCommands = bot.channels.get(botconfig.logsChannelID);
 
   if(message.channel.type == "dm") {
