@@ -47,7 +47,7 @@ if(cmd === `${prefix}Gang`){
   .addField("מספר אנשים הוא:", message.guild.memberCount)
   .setFooter("bot made by avishaiDV");
   message.delete().catch(O_o=>{});
-  commands.reply(embed)
+  commands.send(embed)
 }
 
 //sub count
